@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paiement - BOOLKY</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
             --primary-color: #4CAF50;
@@ -13,18 +14,18 @@
             --bg-color: #f2f2f2;
             --card-bg: #fff;
             --border-radius: 10px;
-            --box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            --box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             --input-border: #ccc;
             --required-color: red;
             --guichet-bg: #f9f9f9;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -34,7 +35,7 @@
             min-height: 100vh;
             padding: 20px;
         }
-        
+
         .container {
             background-color: var(--card-bg);
             padding: 30px;
@@ -43,54 +44,54 @@
             width: 100%;
             max-width: 400px;
         }
-        
+
         h2 {
             text-align: center;
             color: var(--text-color);
             margin-bottom: 20px;
             font-size: clamp(1.5rem, 3vw, 1.8rem);
         }
-        
+
         p {
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         .guichet {
             background-color: var(--guichet-bg);
             padding: 15px;
             border-radius: var(--border-radius);
             margin-bottom: 15px;
         }
-        
+
         .guichet h3 {
             margin: 0 0 10px 0;
             color: var(--primary-color);
             font-size: 1.1rem;
         }
-        
+
         .guichet p {
             margin: 0;
             text-align: left;
         }
-        
+
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         label {
             font-weight: 600;
             font-size: 0.9rem;
         }
-        
+
         .required:after {
             content: " *";
             color: var(--required-color);
         }
-        
+
         input[type="file"] {
             width: 100%;
             padding: 10px 0;
@@ -99,7 +100,7 @@
             font-size: 1rem;
             margin-top: 5px;
         }
-        
+
         button {
             width: 100%;
             padding: 14px;
@@ -113,99 +114,125 @@
             margin-top: 10px;
             transition: background-color 0.3s;
         }
-        
+
         button:hover {
             background-color: var(--secondary-color);
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 20px;
             }
-            
+
             button {
                 padding: 12px;
             }
         }
+
         .btn-retour {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
+            display: inline-block;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
 
-.btn-retour:hover {
-    color: #45a049;
-    text-decoration: underline;
-}
+        .btn-retour:hover {
+            color: #45a049;
+            text-decoration: underline;
+        }
 
-@media (max-width: 480px) {
-    .btn-retour {
-        margin-top: 15px;
-        display: block;
-        text-align: center;
-    }
-}
-/* Animations */
+        @media (max-width: 480px) {
+            .btn-retour {
+                margin-top: 15px;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
         .guichet {
             transition: all 0.3s;
             animation: fadeIn 0.8s both;
         }
-        
-        .guichet:nth-child(1) { animation-delay: 0.2s; }
-        .guichet:nth-child(2) { animation-delay: 0.4s; }
-        .guichet:nth-child(3) { animation-delay: 0.6s; }
-        
+
+        .guichet:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .guichet:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .guichet:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
         .guichet:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         #captureForm {
             animation: fadeInUp 0.8s 0.8s both;
         }
-        
+
         input[type="file"]::file-selector-button {
             transition: all 0.3s;
         }
-        
+
         input[type="file"]::file-selector-button:hover {
             background-color: #4CAF50;
             color: white;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-       <h2 class="animate__animated animate__fadeIn">Guichets de paiement</h2>
+        <h2 class="animate__animated animate__fadeIn">Guichets de paiement</h2>
         <p>Veuillez envoyer les <strong>3000 FCFA</strong> d'inscription à l'un des numéros de guichet suivants :</p>
-        
+
         <div class="guichet">
             <h3>Orange Money</h3>
             <p><strong>Numéro :</strong> 226 56370298</p>
         </div>
-        
+
         <div class="guichet">
             <h3>MTN Mobile Money</h3>
             <p><strong>Numéro :</strong> 225 0503953542</p>
         </div>
-        
+
         <div class="guichet">
             <h3>Moov Mobile Money</h3>
             <p><strong>Numéro :</strong> 225 0170467927
-</p>
+            </p>
         </div>
-        
-        <form id="captureForm" action="page4.html" method="POST" enctype="multipart/form-data">
+
+        <form id="captureForm" method="POST" enctype="multipart/form-data">
             <label for="capture" class="required">Capture du transfert</label>
             <input type="file" id="capture" name="capture" accept="image/*" required>
-            
+
             <button type="submit">Valider l'inscription</button>
         </form>
         <a href="index.html" class="btn-retour animate__animated animate__fadeIn">← Retour à l'accueil</a>
     </div>
+
+    <script>
+
+        document.getElementById('captureForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêche l'envoi automatique
+
+            // Tu peux ici ajouter des validations supplémentaires si besoin
+
+
+            // Redirection manuelle après validation
+            window.location.href = "page4.html";
+        });
+
+    </script>
 </body>
+
 </html>
