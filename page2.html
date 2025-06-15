@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription BOOLKY</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --text-color: #333;
+            --bg-color: #f2f2f2;
+            --card-bg: #fff;
+            --border-radius: 10px;
+            --box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            --input-border: #ccc;
+            --required-color: red;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .required:after {
+            content: " *";
+            color: var(--required-color);
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--input-border);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        
+        input[type="file"] {
+            padding: 10px 0;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            input, button {
+                padding: 12px;
+            }
+        }
+        .btn-retour {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.btn-retour:hover {
+    color: #45a049;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .btn-retour {
+        margin-top: 15px;
+        display: block;
+        text-align: center;
+    }
+}
+ /* Animations */
+        .container {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        form {
+            animation: slideInUp 0.8s 0.3s both;
+        }
+        
+        input:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s;
+        }
+        
+        button {
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .invalid {
+            animation: shake 0.5s;
+            border-color: #ff4444 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h2 class="animate__animated animate__fadeInDown">Inscription BOOLKY</h2>
+        <form id="registrationForm" action="page3.html" method="POST" enctype="multipart/form-data">
+            <label for="nom" class="required">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            
+            <label for="prenom" class="required">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            
+            <label for="pays" class="required">Pays</label>
+            <input type="text" id="pays" name="pays" placeholder="Votre pays" required>
+            
+            <label for="ville" class="required">Ville</label>
+            <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
+            
+            <label for="telephone" class="required">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
+            
+            <label for="gmail" class="required">Gmail</label>
+            <input type="email" id="gmail" name="gmail" placeholder="Votre adresse Gmail" required pattern=".+@gmail\.com">
+            
+            <label for="photo" class="required">Votre photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+            
+            <button type="submit">Continuer vers le paiement</button>
+        </form>
+         <a href="index.html" class="btn-retour animate__animated animate__fadeIn">← Retour à l'accueil</a>
+    </div>
+     <script>
+        // Animation pour les champs invalides
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('invalid', () => {
+                input.classList.add('invalid');
+                setTimeout(() => input.classList.remove('invalid'), 500);
+            });
+        });
+    </script>
+</body>
+</html>

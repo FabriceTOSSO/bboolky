@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOLKY - Gagnez de l'argent facilement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #fff;
+            --border-radius: 10px;
+            --box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin: 15px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+         /* Animation personnalisée */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .hero-text {
+            animation: fadeInDown 1s both;
+        }
+        
+        .emoji {
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+        }
+        
+        .btn {
+            animation: fadeInUp 1s 0.5s both;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        /* Animation du fond */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f5f5f5 25%, #e8f5e9 25%, #e8f5e9 50%, #f5f5f5 50%, #f5f5f5 75%, #e8f5e9 75%);
+            background-size: 100px 100px;
+            opacity: 0.1;
+            z-index: -1;
+            animation: bgScroll 20s linear infinite;
+        }
+        
+        @keyframes bgScroll {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+    </style>
+</head>
+<body>
+      <div class="container">
+        <h1 class="hero-text">💼 Bienvenue sur BOOLKY !</h1>
+        <div class="emoji animate__animated animate__pulse animate__infinite">🚀</div>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">BOOLKY est une plateforme innovante qui te permet de gagner de l'argent en marquant des vues sur des publications d'annonces de vente</p>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">Rejoins des milliers d'utilisateurs déjà actifs sur BOOLKY et commence dès aujourd'hui à transformer ton temps en argent.</p>
+        <a href="page2.html" class="btn">COMMENCER</a>
+        
+    </div>
+</body>
+</html>

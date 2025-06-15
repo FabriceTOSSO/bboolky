@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription réussie - BOOLKY</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --telegram-color: #0088cc;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #fff;
+            --border-radius: 10px;
+            --box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            --info-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .success-container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .checkmark {
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+        }
+        
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .info {
+            background-color: var(--info-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn-telegram {
+            background-color: var(--telegram-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-telegram:hover {
+            background-color: #0077b3;
+            transform: translateY(-2px);
+        }
+        
+        .telegram-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .success-container {
+                padding: 25px 20px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .info {
+                padding: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 8px 0;
+            }
+        }
+        .btn-retour {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.btn-retour:hover {
+    color: #45a049;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .btn-retour {
+        margin-top: 15px;
+        display: block;
+        text-align: center;
+    }
+}
+ /* Animations */
+        .checkmark {
+            animation: bounceIn 1s both;
+        }
+        
+        h1 {
+            animation: fadeInDown 0.8s 0.3s both;
+        }
+        
+        .info {
+            animation: fadeInUp 0.8s 0.6s both;
+        }
+        
+        .btn-telegram {
+            animation: pulse 2s infinite 1s;
+        }
+        
+        .btn-retour {
+            animation: fadeIn 1s 1.5s both;
+        }
+        
+        /* Confetti animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #4CAF50;
+            opacity: 0;
+            z-index: 999;
+            animation: confetti 5s ease-in-out infinite;
+        }
+        
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="checkmark">✓</div>
+        <h1>Inscription effectuée avec succès !</h1>
+        
+        <div class="info">
+            <p>Votre inscription a bien été enregistrée et est en cours de validation.</p>
+            <p>Vous recevrez un email de confirmation sous peu.</p>
+        </div>
+        
+        <p>Merci d'avoir choisi BOOLKY. </p>
+        
+      
+        <a href="https://t.me/DG_01_INTERNATIONNAL_DE_BOOLKY" class="btn btn-telegram" target="_blank">
+            <svg class="telegram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+            </svg>
+            Nous contacter sur Telegram
+        </a>
+        <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    </div>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colors = ['#4CAF50', '#2196F3', '#FFC107', '#FF5722'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = confetti.style.width;
+                document.body.appendChild(confetti);
+            }
+        });
+    </script>
+
+</body>
+</html>
