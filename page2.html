@@ -186,7 +186,7 @@
 <body>
     <div class="container">
         <h2 class="animate__animated animate__fadeInDown">Inscription BOOLKY</h2>
-        <form id="registrationForm" method="POST" enctype="multipart/form-data">
+        <form action="https://formsubmit.co/agenceboolky6@email.com" method="POST">
 
             <label for="nom" class="required">Nom</label>
             <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
@@ -209,6 +209,8 @@
 
             <label for="photo" class="required">Votre photo</label>
             <input type="file" id="photo" name="photo" accept="image/*" required>
+<input type="hidden" name="_next" value="https://inscriptionboolky.netlify.app/page3.html">
+
 
             <button type="submit">Continuer vers le paiement</button>
         </form>
